@@ -1,0 +1,23 @@
+.wrapper {
+  background-color: rgb(253, 245, 233);
+  padding: 80px;
+  min-height: auto;
+}
+
+.menu img {
+  width: 100%;
+}
+
+.subnav {
+  max-width: 210px;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.sublink {
+  text-decoration: none;
+  color: black;
+}

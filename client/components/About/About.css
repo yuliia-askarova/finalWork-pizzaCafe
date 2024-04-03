@@ -1,0 +1,45 @@
+.about h3 {
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+}
+
+.about p {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  padding: 50px;
+}
+
+.about img {
+  width: 750px;
+  height: 450px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.about iframe {
+  width: 380px;
+  height: 200px;
+}
+
+.location {
+  background-color: rgb(252, 185, 157);
+  padding: 60px;
+}
+
+.location-content {
+  margin: 0 150px;
+}
+
+.location-content p,
+.location-content h3 {
+  padding: 0;
+  text-align: left;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
