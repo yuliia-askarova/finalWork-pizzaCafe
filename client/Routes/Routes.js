@@ -3,7 +3,7 @@ import App from "../App.jsx";
 import Header from "../components/Header/Header.jsx";
 import Menu from "../components/Menu/Menu.jsx";
 import About from "../components/About/About.jsx";
-
+import React from "react";
 import Pizzas from "../components/Menu/Pizzas.jsx";
 import Drinks from "../components/Menu/Drinks.jsx";
 

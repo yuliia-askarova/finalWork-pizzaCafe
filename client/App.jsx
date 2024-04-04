@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./components/Home/Home.jsx";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,8 @@ function App() {
   
   useEffect(()=> {
     const init = async() => {
-      const res = await fetch ('http://localhost:3000/api/pizza');
+      const res = await fetch('/pizza');
+      console.log(res);
       const data = await res.json();
       dispatch(getAllPizzas(data))
     }
@@ -22,7 +23,7 @@ function App() {
     <>
       <div>
         <Home />
-  
+
       </div>
     </>
   );

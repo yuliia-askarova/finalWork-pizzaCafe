@@ -25,7 +25,7 @@ const server = fastify({
 });
 
 server.register(fastifyStatic, {
-  root: join(__dirname, "../client"),
+  root: join(__dirname, "../dist"),
 });
 
 server.get("/pizza", async (request, reply) => {

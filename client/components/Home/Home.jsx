@@ -5,6 +5,7 @@ import pic4 from "../../assets/4.png";
 import pic5 from "../../assets/5.png";
 import pic6 from "../../assets/6.png";
 import "./Home.css";
+import React, { useState, useEffect } from "react";
 import Footer from "../Footer/Footer.jsx";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css";
