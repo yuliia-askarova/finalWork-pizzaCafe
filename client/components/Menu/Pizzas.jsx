@@ -7,12 +7,14 @@ import Modal from "./Modal.jsx";
 const Pizzas = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const [selectedPizza, setSelectedPizza] = useState(null);
-  const [selectedPizzaImage, setSelectedPizzaImage] = useState(""); 
+ const [id, setId] = useState('');
+  
+
+
 
   const handleShowModal = (pizza) => {
-    setSelectedPizza(pizza);
-    setSelectedPizzaImage(pizza.imageUrl); 
+    setId (pizza._id)
+   
     setShowModal(true);
   };
 
@@ -37,6 +39,7 @@ const Pizzas = () => {
               <button
                 className="pizza-button"
                 onClick={() => handleShowModal(item)}
+
               >
                 +
               </button>
@@ -44,12 +47,10 @@ const Pizzas = () => {
               <Modal
                 show={showModal}
                 handleClose={handleCloseModal}
-                imageUrl={selectedPizzaImage}
+                id = {id}
+              
               >
-                <div className="modal-header">
-                  <p>Pizza</p>
-                  {selectedPizza && <p>{selectedPizza.name}</p>}
-                </div>
+
               </Modal>
             </div>
           </li>

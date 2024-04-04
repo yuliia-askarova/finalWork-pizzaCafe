@@ -16,7 +16,7 @@ const Menu = () => {
 
   useEffect(()=> {
     const init = async() => {
-      const res = await fetch ('http://localhost:3000/api/pizza');
+      const res = await fetch ('http://127.0.0.1:5000/pizza');
       const data = await res.json();
       dispatch(getAllPizzas(data))
     }
@@ -25,7 +25,7 @@ const Menu = () => {
 
   useEffect(()=> {
     const init = async() => {
-      const res = await fetch ('http://localhost:3000/api/drinks');
+      const res = await fetch ('http://127.0.0.1:5000/drinks');
       const data = await res.json();
       dispatch(getAllDrinks(data))
     }

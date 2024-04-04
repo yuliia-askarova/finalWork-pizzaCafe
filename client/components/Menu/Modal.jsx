@@ -1,25 +1,43 @@
 import React from "react";
 import "./Modal.css";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addToBasket } from "../../Store/Slices/basketSliceReducer";
 
-const Modal = ({ handleClose, show, children, imageUrl }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+const Modal = ({ handleClose, show, id }) => {
+  // const showHideClassName = show ? "modal display-block" : "modal display-none";
+  const products = useSelector(state => [...state.pizza, ...state.drinks]);
+const product = products.find(item => item._id === id);
+const dispatch = useDispatch()
+const handleAdd = () => {
+  dispatch(addToBasket(product));
+  handleClose()
+  
+}
+  
 
   return (
-    <div className={showHideClassName}>
+   <> {(show) &&  
+      
+      <div className={"modal display-block"}>
       <section className="modal-main">
-        {children}
+        {/* {children} */}
+
+        <div className="modal-header">
+                  <p>Pizza</p>
+                  <p>{product.name}</p>
+                </div>
 
         <div className="modal-container">
           <div>
             <div className="modal-img">
-              {imageUrl && <img src={imageUrl} alt="Pizza" />}
+              <img src={product.imageUrl} alt="Pizza" />
             </div>
           </div>
 
           <form className="form">
             <div className="option">
-              <label className="modal-text" for="radio1">
+              <label className="modal-text" htmlFor="radio1">
                 Small size
               </label>
               <input
@@ -33,7 +51,7 @@ const Modal = ({ handleClose, show, children, imageUrl }) => {
             </div>
 
             <div className="option">
-              <label className="modal-text" for="radio2">
+              <label className="modal-text" htmlFor="radio2">
                 Large size
               </label>
               <input
@@ -50,12 +68,15 @@ const Modal = ({ handleClose, show, children, imageUrl }) => {
 
         <div className="modal-footer">
           <p>TOTAL: </p>
-          <button>ADD TO BASKET</button>
+          <button onClick = {handleAdd} >ADD TO BASKET</button>
         </div>
 
         <button onClick={handleClose}></button>
       </section>
     </div>
+    
+  }</>
+  
   );
 };
 

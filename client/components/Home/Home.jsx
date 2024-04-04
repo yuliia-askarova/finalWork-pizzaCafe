@@ -7,10 +7,10 @@ import pic6 from "../../assets/6.png";
 import "./Home.css";
 import React, { useState, useEffect } from "react";
 import Footer from "../Footer/Footer.jsx";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import { Navigation, FreeMode} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation, FreeMode} from "swiper/modules";
 
 const discounts = [
   {
@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <div className="main">
 
-      {/* <Swiper
+      <Swiper
         navigation={true}
         loop={true}
         spaceBetween={10}
@@ -61,7 +61,7 @@ const Home = () => {
         <SwiperSlide>
           <img src={slide3} alt="slide3" />
         </SwiperSlide>
-      </Swiper> */}
+      </Swiper> 
 
       <div className="wrapper">
         <div className="container">

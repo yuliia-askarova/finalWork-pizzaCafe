@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import fastifyEnv from "@fastify/env";
 import mongoose from "mongoose";
 import Pizza from "./model/Pizza.js";
+import Drinks from './model/Drinks.js';
 
 mongoose
   .connect(
@@ -31,8 +32,17 @@ server.register(fastifyStatic, {
 server.get("/pizza", async (request, reply) => {
   try {
     const pizza = await Pizza.find();
-    console.log(pizza);
     return reply.send(pizza);
+  } catch (error) {
+    reply.status(500).send({ error: "Database error" });
+  }
+});
+
+server.get("/drinks", async (request, reply) => {
+  try {
+    console.log(111);
+    const drinks = await Drinks.find();
+    return reply.send(drinks);
   } catch (error) {
     reply.status(500).send({ error: "Database error" });
   }
